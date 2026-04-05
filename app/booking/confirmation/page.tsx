@@ -44,7 +44,7 @@ export default function ConfirmationPage() {
   const router = useRouter();
 
   useEffect(() => {
-    const currentUser = getCurrentUser();
+    const currentUser = await getCurrentUser();
     if (!currentUser) {
       router.push("/login"); // redirect kalau belum login
       return;
