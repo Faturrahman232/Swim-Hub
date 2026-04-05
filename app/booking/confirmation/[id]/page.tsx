@@ -1,5 +1,11 @@
 "use client";
 
+declare global {
+  interface Window {
+    snap: any;
+  }
+}
+
 import { useSearchParams, useRouter, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
