@@ -6,6 +6,6 @@ const SUPABASE_URL = "https://mevaoopyearmkxhiviif.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1ldmFvb3B5ZWFybWt4aGl2aWlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc1Nzc4MDksImV4cCI6MjA2MzE1MzgwOX0.K2W9ewF1s1tG9OiTpdusEPplSW5cQDpGsvQClNgDHAs";
 
 // Import the supabase client like this:
-// import { supabase } from "@/integrations/supabase/client";
+// import { supabase } from "@/components/react/integrations/supabase/client";
 
 export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);

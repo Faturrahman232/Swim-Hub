@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react';
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, TooltipProps, XAxis, YAxis } from 'recharts';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from '@/hooks/use-toast';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import { supabase } from '@/integrations/supabase/client';
-import StatusBadge from '@/components/ui/StatusBadge';
+import Navbar from '@/components/react/components/layout/Navbar';
+import Footer from '@/components/react/components/layout/Footer';
+import { supabase } from '@/components/react/integrations/supabase/client';
+import StatusBadge from '@/components/react/components/ui/StatusBadge';
 import { AreaChart, Area } from 'recharts';
 import { format, subHours } from 'date-fns';
 

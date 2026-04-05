@@ -1,6 +1,7 @@
 
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
+import Navbar from '@/components/react/components/layout/Navbar';
+// import Navbar from '@/components/react/components/layout/Navbar';
+import Footer from '@/components/react/components/layout/Footer';
 import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {

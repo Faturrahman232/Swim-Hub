@@ -14,10 +14,10 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import PoolStats from "@/components/dashboard/PoolStats";
-import StatCard from "@/components/dashboard/StatCard";
-import BookingStatusBadge from "@/components/ui/booking-status-badge";
-import { supabase } from "@/integrations/supabase/client";
+import PoolStats from "@/components/react/components/dashboard/PoolStats";
+import StatCard from "@/components/react/components/dashboard/StatCard";
+import BookingStatusBadge from "@/components/react/components/ui/booking-status-badge";
+import { supabase } from "@/components/react/integrations/supabase/client";
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState("overview");

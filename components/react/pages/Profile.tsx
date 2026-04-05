@@ -7,10 +7,10 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import BookingStatusBadge from '@/components/ui/booking-status-badge';
-import { supabase } from '@/integrations/supabase/client';
+import Navbar from '@/components/react/components/layout/Navbar';
+import Footer from '@/components/react/components/layout/Footer';
+import BookingStatusBadge from '@/components/react/components/ui/booking-status-badge';
+import { supabase } from '@/components/react/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 
 interface ProfileData {
@@ -127,10 +127,14 @@ const Profile = () => {
     setIsLoading(true);
     
     try {
+      if (!user?.id) {
+        throw new Error("User ID is undefined");
+      }
+
       const { error } = await supabase
         .from('profiles')
         .update({ full_name: formData.fullName })
-        .eq('id', user?.id);
+        .eq('id', user.id);
       
       if (error) throw error;
       

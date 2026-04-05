@@ -8,7 +8,8 @@ const nextConfig = {
   // experimental: {
   //   serverActions: true,
   // },
-  domains: [
+  images: {
+    domains: [
     'i.dailymail.co.uk',
     'cdn.cnn.com',
     'media.cnn.com',
@@ -16,6 +17,8 @@ const nextConfig = {
     'cdn.gnews.io',
     'www.manilatimes.net',
   ],
+  },
+  
 
 };
 

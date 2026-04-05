@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-interface BookingProps {
+export interface BookingProps {
   id: string;
   date: string;
   time: string;
@@ -15,8 +15,8 @@ interface BookingProps {
 
 export function UpcomingBookingCard({ booking }: { booking: BookingProps }) {
   const formattedDate = format(parseISO(booking.date), "EEEE, MMM d, yyyy");
-  
-  const getStatusColor = (status: string) => {
+
+  const getStatusColor = (status: BookingProps["status"]) => {
     switch (status) {
       case "confirmed":
         return "bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400 border-green-200 dark:border-green-800";
@@ -32,12 +32,14 @@ export function UpcomingBookingCard({ booking }: { booking: BookingProps }) {
   return (
     <div className="p-4 border rounded-lg dark:border-gray-800">
       <div className="flex justify-between items-start mb-2">
-        <h3 className="font-medium text-gray-900 dark:text-white">Booking #{booking.id}</h3>
+        <h3 className="font-medium text-gray-900 dark:text-white">
+          Booking #{booking.id}
+        </h3>
         <Badge variant="outline" className={getStatusColor(booking.status)}>
           {booking.status.charAt(0).toUpperCase() + booking.status.slice(1)}
         </Badge>
       </div>
-      
+
       <div className="space-y-2 text-sm mb-3">
         <div className="flex items-center text-gray-600 dark:text-gray-400">
           <CalendarDays className="h-4 w-4 mr-2" />
@@ -56,12 +58,10 @@ export function UpcomingBookingCard({ booking }: { booking: BookingProps }) {
           {booking.lane}
         </div>
       </div>
-      
+
       <div className="flex space-x-2 mt-3">
         <Button variant="outline" size="sm" className="flex-1" asChild>
-          <Link href={`/dashboard/bookings/${booking.id}`}>
-            View Details
-          </Link>
+          <Link href={`/dashboard/bookings/${booking.id}`}>View Details</Link>
         </Button>
         <Button variant="outline" size="sm" className="flex-1" asChild>
           <Link href={`/dashboard/bookings/${booking.id}/reschedule`}>

@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import StatCard from '@/components/dashboard/StatCard';
-import PoolStats from '@/components/dashboard/PoolStats';
+import Navbar from '@/components/react/components/layout/Navbar';
+import Footer from '@/components/react/components/layout/Footer';
+import StatCard from '@/components/react/components/dashboard/StatCard';
+import PoolStats from '@/components/react/components/dashboard/PoolStats';
 
 const Dashboard = () => {
   const [upcomingBookings, setUpcomingBookings] = useState([

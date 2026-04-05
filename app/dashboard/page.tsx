@@ -26,7 +26,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { PoolConditionCard } from "@/components/dashboard/pool-condition-card";
-import { UpcomingBookingCard } from "@/components/dashboard/upcoming-booking-card";
+import { UpcomingBookingCard, type BookingProps } from "@/components/dashboard/upcoming-booking-card";
 import { PoolOccupancyChart } from "@/components/dashboard/pool-occupancy-chart";
 
 export default function DashboardPage() {
@@ -56,24 +56,24 @@ export default function DashboardPage() {
   const occupancyStatus = getOccupancyStatus(occupancy);
 
   // Mock data for upcoming bookings
-  const upcomingBookings = [
-    {
-      id: "BK-12345",
-      date: "2025-04-20",
-      time: "10:00 AM - 11:30 AM",
-      guests: 2,
-      lane: "Lane 3",
-      status: "confirmed",
-    },
-    {
-      id: "BK-12346",
-      date: "2025-04-25",
-      time: "2:00 PM - 3:30 PM",
-      guests: 1,
-      lane: "Lane 5",
-      status: "confirmed",
-    },
-  ];
+  const upcomingBookings: BookingProps[] = [
+  {
+    id: "BK-12345",
+    date: "2025-04-20",
+    time: "10:00 AM - 11:30 AM",
+    guests: 2,
+    lane: "Lane 3",
+    status: "confirmed",
+  },
+  {
+    id: "BK-12346",
+    date: "2025-04-25",
+    time: "2:00 PM - 3:30 PM",
+    guests: 1,
+    lane: "Lane 5",
+    status: "confirmed",
+  },
+];
 
   return (
     <div className="p-6">

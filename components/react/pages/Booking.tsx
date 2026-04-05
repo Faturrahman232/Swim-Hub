@@ -11,9 +11,9 @@ import { CalendarIcon } from "lucide-react";
 import { cn } from '@/lib/utils';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import { supabase } from '@/integrations/supabase/client';
+import Navbar from '@/components/react/components/layout/Navbar';
+import Footer from '@/components/react/components/layout/Footer';
+import { supabase } from '@/components/react/integrations/supabase/client';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 const PRICE_PER_PERSON = 10.00; // Base price per person

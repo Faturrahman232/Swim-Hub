@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import StatusBadge from "@/components/ui/StatusBadge";
+import StatusBadge from "@/components/react/components/ui/StatusBadge";
 
 interface PoolStatsProps {
   occupancy: number;

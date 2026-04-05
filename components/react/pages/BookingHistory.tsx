@@ -1,13 +1,13 @@
 
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import BookingStatusBadge from "@/components/ui/booking-status-badge";
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
+import BookingStatusBadge from "@/components/react/components/ui/booking-status-badge";
+import Navbar from '@/components/react/components/layout/Navbar';
+import Footer from '@/components/react/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { useNavigate } from 'react-router-dom';
-import { supabase } from '@/integrations/supabase/client';
+import { supabase } from '@/components/react/integrations/supabase/client';
 import { format } from 'date-fns';
 
 interface Booking {
