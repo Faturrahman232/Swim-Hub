@@ -44,26 +44,30 @@ export default function ConfirmationPage() {
   const router = useRouter();
 
   useEffect(() => {
-    const currentUser = await getCurrentUser();
-    if (!currentUser) {
-      router.push("/login"); // redirect kalau belum login
-      return;
-    }
-    if (!bookingId) {
-      router.push("/booking");
-      return;
-    }
-
-    const fetchBooking = async () => {
+    const checkAuth = async () => {
       try {
-        const res = await fetch(`/api/bookings/${bookingId}`);
-        if (!res.ok) throw new Error("Failed to fetch booking");
-        const data = await res.json();
-        if (data.user_id !== currentUser.id) {
-          router.push("/booking"); // atau ke "/", atau tampilkan error
+        const currentUser = await getCurrentUser();
+
+        if (!currentUser) {
+          router.push("/login");
           return;
         }
-        console.log("[BOOKING_DETAILS]", data);
+
+        if (!bookingId) {
+          router.push("/booking");
+          return;
+        }
+
+        const res = await fetch(`/api/bookings/${bookingId}`);
+        if (!res.ok) throw new Error("Failed to fetch booking");
+
+        const data = await res.json();
+
+        if (data.user_id !== currentUser.id) {
+          router.push("/booking");
+          return;
+        }
+
         setBookingDetails(data);
       } catch (err) {
         console.error(err);
@@ -71,7 +75,7 @@ export default function ConfirmationPage() {
       }
     };
 
-    fetchBooking();
+    checkAuth(); // ✅ panggil di sini
   }, [bookingId, router]);
 
   if (!bookingDetails) {
