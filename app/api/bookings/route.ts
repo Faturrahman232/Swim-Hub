@@ -3,12 +3,16 @@ import jwt from 'jsonwebtoken';
 import { db } from '@/lib/db';
 import { cookies } from 'next/headers';
 
-const SECRET_KEY = process.env.JWT_SECRET!;
-if (!SECRET_KEY) {
-  throw new Error("JWT_SECRET environment variable is not set.");
-}
-
 export async function POST(req: Request) {
+  const SECRET_KEY = process.env.JWT_SECRET;
+
+  if (!SECRET_KEY) {
+    return NextResponse.json(
+      { error: "Server configuration error" },
+      { status: 500 }
+    );
+  }
+
   try {
     const cookieStore = cookies();
     const token = cookieStore.get("token")?.value;
