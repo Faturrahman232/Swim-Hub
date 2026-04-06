@@ -25,6 +25,8 @@ const formatIDR = (value: number) => {
   }).format(value);
 };
 
+export const dynamic = "force-dynamic";
+
 export default function StatusPage() {
   const searchParams = useSearchParams();
   const router = useRouter();

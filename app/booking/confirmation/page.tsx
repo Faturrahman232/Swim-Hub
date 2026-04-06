@@ -34,6 +34,8 @@ const formatIDR = (value: number) => {
   }).format(value);
 };
 
+export const dynamic = "force-dynamic";
+
 export default function ConfirmationPage() {
   const searchParams = useSearchParams();
   // const bookingId = searchParams.get("id");
